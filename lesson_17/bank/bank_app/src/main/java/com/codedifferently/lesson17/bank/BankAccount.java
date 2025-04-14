@@ -4,8 +4,7 @@ import java.util.Set;
 
 import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
 
-public interface Account {
-   
+public interface BankAccount {
   /**
    * Gets the account number.
    *
@@ -41,16 +40,14 @@ public interface Account {
    * @return The balance of the account.
    */
   public double getBalance();
+
   /** Closes the account. */
-  
-  public void closeAccount();
+  public void closeAccount() throws IllegalStateException;
+
   /**
    * Checks if the account is closed.
    *
    * @return True if the account is closed, otherwise false.
    */
   public boolean isClosed();
- 
 }
-
-
