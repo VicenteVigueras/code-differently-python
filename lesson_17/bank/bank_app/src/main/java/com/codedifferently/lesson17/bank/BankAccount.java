@@ -1,9 +1,8 @@
 package com.codedifferently.lesson17.bank;
 
+import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
 import java.util.Collections;
 import java.util.Set;
-
-import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
 
 /** Represents a bank account. */
 public class BankAccount {
@@ -120,10 +119,15 @@ public class BankAccount {
 
   @Override
   public String toString() {
-    return getClass().getSimpleName() + "{" +
-            "accountNumber='" + accountNumber + '\'' +
-            ", balance=" + balance +
-            ", isActive=" + isActive +
-            '}';
+    return getClass().getSimpleName()
+        + "{"
+        + "accountNumber='"
+        + accountNumber
+        + '\''
+        + ", balance="
+        + balance
+        + ", isActive="
+        + isActive
+        + '}';
   }
 }

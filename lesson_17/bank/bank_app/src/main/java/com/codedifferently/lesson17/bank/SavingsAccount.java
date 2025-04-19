@@ -1,8 +1,7 @@
 package com.codedifferently.lesson17.bank;
 
-import java.util.Set;
-
 import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
+import java.util.Set;
 
 /** Represents a savings account. */
 public class SavingsAccount extends BankAccount {
@@ -15,7 +14,7 @@ public class SavingsAccount extends BankAccount {
    * @param initialBalance The initial balance of the account.
    */
   public SavingsAccount(String accountNumber, Set<Customer> owners, double initialBalance) {
-      super(accountNumber, owners, initialBalance);
+    super(accountNumber, owners, initialBalance);
   }
 
   /**
