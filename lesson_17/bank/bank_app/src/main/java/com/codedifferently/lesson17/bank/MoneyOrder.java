@@ -23,13 +23,13 @@ public class MoneyOrder {
   @Override
   public String toString() {
     return "MoneyOrder{"
-            + "moneyOrderNumber='"
-            + moneyOrderNumber
-            + '\''
-            + ", amount="
-            + amount
-            + ", account="
-            + bankAccount.getAccountNumber()
-            + '}';
+        + "moneyOrderNumber='"
+        + moneyOrderNumber
+        + '\''
+        + ", amount="
+        + amount
+        + ", account="
+        + bankAccount.getAccountNumber()
+        + '}';
   }
 }
