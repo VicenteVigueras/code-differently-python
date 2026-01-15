@@ -12,11 +12,15 @@ class MultipleChoiceQuestion:
         def __init__(self, question_number, question, choices, answer):
             self.question_number = question_number  
             self.question = question  
+            print(f"{question_number}. {question}\n")
             self.choices = choices
+            print(f"{choices}")
             self.answer = answer
+            print(f"answer: {answer}")
 
 
 class Lesson2:
+    @staticmethod
     def run():
         quiz_questions = Lesson2.make_quiz_questions()
         if not quiz_questions:
@@ -42,3 +46,4 @@ class Lesson2:
         question_0 = MultipleChoiceQuestion(0, question, choices, answer)
         return question_0
     
+Lesson2().run()
