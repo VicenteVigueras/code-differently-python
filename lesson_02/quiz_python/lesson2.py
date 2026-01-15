@@ -14,9 +14,10 @@ class MultipleChoiceQuestion:
             self.question = question  
             print(f"{question_number}. {question}\n")
             self.choices = choices
-            print(f"{choices}")
+            for key, value in choices.items():
+                print(f"{key}: {value}\n")
             self.answer = answer
-            print(f"answer: {answer}")
+            print(f"answer: {answer}\n\n")
 
 
 class Lesson2:
