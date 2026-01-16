@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ "main" ]
     paths:
-      - "lesson_02/**"
+      - "lesson_02/quiz_python/**"
 
 jobs:
   test:
