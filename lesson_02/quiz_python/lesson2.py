@@ -1,23 +1,22 @@
 from enum import Enum
 
 class AnswerChoice(Enum):
-    UNANSWERED = "UNANSWERED",
-    A = "A",
-    B = "B",
-    C = "C",
-    D = "D",
+    UNANSWERED = "UNANSWERED"
+    A = "A"
+    B = "B"
+    C = "C"
+    D = "D"
 
 
 class MultipleChoiceQuestion: 
         def __init__(self, question_number, question, choices, answer):
             self.question_number = question_number  
             self.question = question  
-            print(f"{question_number}. {question}\n")
             self.choices = choices
-            for key, value in choices.items():
-                print(f"{key}: {value}\n")
             self.answer = answer
-            print(f"answer: {answer}\n\n")
+
+        def get_answer(self):
+            return self.answer
 
 
 class Lesson2:
@@ -187,7 +186,7 @@ class Lesson2:
         }
         answer = AnswerChoice.A
         return MultipleChoiceQuestion(10, question, choices, answer)
-        
+
 if __name__ == "__main__":
     Lesson2().run()
 
