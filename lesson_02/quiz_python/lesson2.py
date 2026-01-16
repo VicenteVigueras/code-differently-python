@@ -7,7 +7,6 @@ class AnswerChoice(Enum):
     C = "C"
     D = "D"
 
-
 class MultipleChoiceQuestion: 
         def __init__(self, question_number, question, choices, answer):
             self.question_number = question_number  
@@ -41,7 +40,6 @@ class Lesson2:
             Lesson2.__make_question_8(),
             Lesson2.__make_question_9(),
             Lesson2.__make_question_10(),
-
         ]
     
     @staticmethod
@@ -53,7 +51,7 @@ class Lesson2:
             "C": "To delete unnecessary files",
             "D": "To run code more efficiently"
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.B
         question_0 = MultipleChoiceQuestion(0, question, choices, answer)
         return question_0
     
@@ -68,8 +66,6 @@ class Lesson2:
         }
         answer = AnswerChoice.A
         return MultipleChoiceQuestion(1, question, choices, answer)
-        
-    
     
     @staticmethod
     def __make_question_2():
@@ -80,10 +76,8 @@ class Lesson2:
             "C": "Push changes to the server",
             "D": "Write code directly in GitHub"
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.D
         return MultipleChoiceQuestion(2, question, choices, answer)
-        
-    
     
     @staticmethod
     def __make_question_3():
@@ -94,10 +88,8 @@ class Lesson2:
             "C": "git branch",
             "D": "git pull"
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.B
         return MultipleChoiceQuestion(3, question, choices, answer)
-       
-    
     
     @staticmethod
     def __make_question_4():
@@ -108,7 +100,7 @@ class Lesson2:
             "C": "NetBeans",
             "D": "VS Code"
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.D
         question_0 = MultipleChoiceQuestion(4, question, choices, answer)
         return question_0
     
@@ -121,10 +113,9 @@ class Lesson2:
             "C": "Dev Containers",
             "D": "Source Control"
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.C
         question_0 = MultipleChoiceQuestion(5, question, choices, answer)
         return question_0
-
 
     @staticmethod
     def __make_question_6():
@@ -135,9 +126,8 @@ class Lesson2:
             "C": "Playing music",
             "D": "Managing source control"
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.C
         return MultipleChoiceQuestion(6, question, choices, answer)
-
 
     @staticmethod
     def __make_question_7():
@@ -148,7 +138,7 @@ class Lesson2:
             "C": "cd",
             "D": "mkdir"
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.B
         return MultipleChoiceQuestion(7, question, choices, answer)
 
     @staticmethod
@@ -160,7 +150,7 @@ class Lesson2:
             "C": "cd",
             "D": "mkdir"
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.C
         return MultipleChoiceQuestion(8, question, choices, answer)
 
     @staticmethod
@@ -184,13 +174,8 @@ class Lesson2:
             "C": "⌘ + Q",
             "D": '⌘ + S, then type "terminal"'
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.B
         return MultipleChoiceQuestion(10, question, choices, answer)
 
 if __name__ == "__main__":
     Lesson2().run()
-
-
-
-
-

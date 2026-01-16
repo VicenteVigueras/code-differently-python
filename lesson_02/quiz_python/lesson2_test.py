@@ -11,7 +11,7 @@ def test_make_quiz_questions():
     assert len(Lesson2.make_quiz_questions()) == 11
 
 
-def review_quiz():
+def test_review_quiz():
     answers = load_answers()
     print(answers)
     questions = Lesson2.make_quiz_questions()
@@ -19,6 +19,3 @@ def review_quiz():
 
     for i in range (0,len(questions)):
         assert questions[i].get_answer().value == answers[i]
-
-
-review_quiz()
