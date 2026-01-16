@@ -1,0 +1,14 @@
+quiz:
+  answers:
+    default:
+      - B #0
+      - A #1
+      - D #2
+      - B #3
+      - D #4
+      - C #5
+      - C #6
+      - B #7
+      - C #8
+      - A #9
+      - B #10

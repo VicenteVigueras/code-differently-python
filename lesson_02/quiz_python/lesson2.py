@@ -1,23 +1,21 @@
 from enum import Enum
 
 class AnswerChoice(Enum):
-    UNANSWERED = "UNANSWERED",
-    A = "A",
-    B = "B",
-    C = "C",
-    D = "D",
-
+    UNANSWERED = "UNANSWERED"
+    A = "A"
+    B = "B"
+    C = "C"
+    D = "D"
 
 class MultipleChoiceQuestion: 
         def __init__(self, question_number, question, choices, answer):
             self.question_number = question_number  
             self.question = question  
-            print(f"{question_number}. {question}\n")
             self.choices = choices
-            for key, value in choices.items():
-                print(f"{key}: {value}\n")
             self.answer = answer
-            print(f"answer: {answer}\n\n")
+
+        def get_answer(self):
+            return self.answer
 
 
 class Lesson2:
@@ -31,22 +29,21 @@ class Lesson2:
     @staticmethod
     def make_quiz_questions():
         return [
-            Lesson2.make_question_0(),
-            Lesson2.make_question_1(),
-            Lesson2.make_question_2(),
-            Lesson2.make_question_3(),
-            Lesson2.make_question_4(),
-            Lesson2.make_question_5(),
-            Lesson2.make_question_6(),
-            Lesson2.make_question_7(),
-            Lesson2.make_question_8(),
-            Lesson2.make_question_9(),
-            Lesson2.make_question_10(),
-
+            Lesson2.__make_question_0(),
+            Lesson2.__make_question_1(),
+            Lesson2.__make_question_2(),
+            Lesson2.__make_question_3(),
+            Lesson2.__make_question_4(),
+            Lesson2.__make_question_5(),
+            Lesson2.__make_question_6(),
+            Lesson2.__make_question_7(),
+            Lesson2.__make_question_8(),
+            Lesson2.__make_question_9(),
+            Lesson2.__make_question_10(),
         ]
     
     @staticmethod
-    def make_question_0():
+    def __make_question_0():
         question = "What is the main purpose of version control?"
         choices = {
             "A": "To make backups of files",
@@ -54,12 +51,12 @@ class Lesson2:
             "C": "To delete unnecessary files",
             "D": "To run code more efficiently"
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.B
         question_0 = MultipleChoiceQuestion(0, question, choices, answer)
         return question_0
     
     @staticmethod
-    def make_question_1():
+    def __make_question_1():
         question = "What is a fork in Git?"
         choices = {
             "A": "A duplicate copy of a repository that you own and modify",
@@ -67,13 +64,11 @@ class Lesson2:
             "C": "A tool for merging branches",
             "D": "A way to delete a repository"
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.A
         return MultipleChoiceQuestion(1, question, choices, answer)
-        
-    
     
     @staticmethod
-    def make_question_2():
+    def __make_question_2():
         question = "Which of the following is NOT part of the basic Git workflow?"
         choices = {
             "A": "Pull the latest changes",
@@ -81,13 +76,11 @@ class Lesson2:
             "C": "Push changes to the server",
             "D": "Write code directly in GitHub"
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.D
         return MultipleChoiceQuestion(2, question, choices, answer)
-        
-    
     
     @staticmethod
-    def make_question_3():
+    def __make_question_3():
         question = "What command is used to combine changes from different branches?"
         choices = {
             "A": "git commit",
@@ -95,13 +88,11 @@ class Lesson2:
             "C": "git branch",
             "D": "git pull"
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.B
         return MultipleChoiceQuestion(3, question, choices, answer)
-       
-    
     
     @staticmethod
-    def make_question_4():
+    def __make_question_4():
         question = "Which IDE is being used in the class?"
         choices = {
             "A": "Eclipse",
@@ -109,12 +100,12 @@ class Lesson2:
             "C": "NetBeans",
             "D": "VS Code"
         }
-        answer = "A"
+        answer = AnswerChoice.D
         question_0 = MultipleChoiceQuestion(4, question, choices, answer)
         return question_0
     
     @staticmethod
-    def make_question_5():
+    def __make_question_5():
         question = "What feature allows developers to work from the same pre-configured environment in VS Code?"
         choices = {
             "A": "Extensions",
@@ -122,13 +113,12 @@ class Lesson2:
             "C": "Dev Containers",
             "D": "Source Control"
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.C
         question_0 = MultipleChoiceQuestion(5, question, choices, answer)
         return question_0
 
-
     @staticmethod
-    def make_question_6():
+    def __make_question_6():
         question = "What is NOT a reason for using an IDE?"
         choices = {
             "A": "Editing and refactoring code",
@@ -136,12 +126,11 @@ class Lesson2:
             "C": "Playing music",
             "D": "Managing source control"
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.C
         return MultipleChoiceQuestion(6, question, choices, answer)
 
-
     @staticmethod
-    def make_question_7():
+    def __make_question_7():
         question = "What is the command to list files in the current directory?"
         choices = {
             "A": "pwd",
@@ -149,11 +138,11 @@ class Lesson2:
             "C": "cd",
             "D": "mkdir"
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.B
         return MultipleChoiceQuestion(7, question, choices, answer)
 
     @staticmethod
-    def make_question_8():
+    def __make_question_8():
         question = "Which command is used to change directories in the terminal?"
         choices = {
             "A": "pwd",
@@ -161,11 +150,11 @@ class Lesson2:
             "C": "cd",
             "D": "mkdir"
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.C
         return MultipleChoiceQuestion(8, question, choices, answer)
 
     @staticmethod
-    def make_question_9():
+    def __make_question_9():
         question = "What does the command `chmod` do?"
         choices = {
             "A": "Change file or directory permissions",
@@ -173,11 +162,11 @@ class Lesson2:
             "C": "Remove a file or directory",
             "D": "Copy a file or directory"
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.A
         return MultipleChoiceQuestion(9, question, choices, answer)
       
     @staticmethod
-    def make_question_10():
+    def __make_question_10():
         question = "What is the shortcut for getting to the Mac terminal?"
         choices = {
             "A": "⌘ + Shift + T",
@@ -185,12 +174,8 @@ class Lesson2:
             "C": "⌘ + Q",
             "D": '⌘ + S, then type "terminal"'
         }
-        answer = AnswerChoice.UNANSWERED
+        answer = AnswerChoice.B
         return MultipleChoiceQuestion(10, question, choices, answer)
-        
-Lesson2().run()
 
-
-
-
-
+if __name__ == "__main__":
+    Lesson2().run()

@@ -150,6 +150,8 @@ venv/
 pip-log.txt
 .vercel
 .env*.local
+.pytest_cache/
 
 # Custom
 !slides/dist/
+
