@@ -59,11 +59,12 @@ jobs:
         npm ci
         npm run test
 
-    - name: Build Lesson 02 with Node.js
-      working-directory: ./lesson_02/quiz
+    - name: Build Lesson 02 with Python
+      working-directory: ./lesson_02/quiz_python
       run: |
-        npm ci
-        npm run compile
+          python -m pip install --upgrade pip
+          pip install pytest
+          pytest
 
     - name: Build Lesson 03 with Node.js
       working-directory: ./lesson_03/quiz
