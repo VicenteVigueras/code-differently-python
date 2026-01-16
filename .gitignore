@@ -153,3 +153,5 @@ pip-log.txt
 
 # Custom
 !slides/dist/
+
+.venv/
