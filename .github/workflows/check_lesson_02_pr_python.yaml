@@ -23,11 +23,11 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        working-directory: ./lesson_02
+        working-directory: ./lesson_02/quiz_python
         run: |
           python -m pip install --upgrade pip
-          pip install -r ./lesson_02/quiz_python/requirements.txt
+          pip install -r requirements.txt
 
       - name: Run pytest
-        working-directory: ./lesson_02
+        working-directory: ./lesson_02/quiz_python
         run: pytest
