@@ -1,4 +1,5 @@
-from lib.python.codedifferently_instructional.src.answer_choice import AnswerChoice
+from lib.python.codedifferently_instructional import AnswerChoice
+
 
 class MultipleChoiceQuestion: 
         def __init__(self, question_number, question, choices, answer):
