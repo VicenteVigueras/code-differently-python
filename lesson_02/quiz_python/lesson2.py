@@ -1,11 +1,4 @@
-from enum import Enum
-
-class AnswerChoice(Enum):
-    UNANSWERED = "UNANSWERED"
-    A = "A"
-    B = "B"
-    C = "C"
-    D = "D"
+from lib.python.codedifferently_instructional.src.answer_choice import AnswerChoice
 
 class MultipleChoiceQuestion: 
         def __init__(self, question_number, question, choices, answer):

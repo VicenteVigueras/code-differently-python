@@ -1,7 +1,6 @@
 from lesson2 import Lesson2
 import yaml
 
-
 def load_answers():
     with open("quiz.yaml", "r") as file:
         data = yaml.safe_load(file)
