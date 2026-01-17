@@ -174,7 +174,7 @@ class Lesson2:
             "C": "⌘ + Q",
             "D": '⌘ + S, then type "terminal"'
         }
-        answer = AnswerChoice.A
+        answer = AnswerChoice.B
         return MultipleChoiceQuestion(10, question, choices, answer)
 
 if __name__ == "__main__":
