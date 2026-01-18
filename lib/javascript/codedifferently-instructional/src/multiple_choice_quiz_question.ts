@@ -1,13 +1,7 @@
 import { QuizQuestion } from './quiz_question.js';
 import { Scanner } from './scanner.js';
+import { AnswerChoice } from './answer_choice.js';
 
-export enum AnswerChoice {
-  UNANSWERED = 'UNANSWERED',
-  A = 'A',
-  B = 'B',
-  C = 'C',
-  D = 'D'
-}
 
 export class MultipleChoiceQuizQuestion extends QuizQuestion {
   private answersByOption: Map<AnswerChoice, string>;
