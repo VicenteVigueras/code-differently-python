@@ -15,4 +15,7 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "python.analysis.extraPaths": [
+        "./lib/python"
+    ],
 }
