@@ -151,6 +151,8 @@ pip-log.txt
 .vercel
 .env*.local
 .pytest_cache/
+*.egg-info/
+*.egg
 
 # Custom
 !slides/dist/
