@@ -9,7 +9,6 @@ def load_answers():
 def test_make_quiz_questions():
     assert len(Lesson2.make_quiz_questions()) == 11
 
-
 def test_review_quiz():
     answers = load_answers()
     print(answers)

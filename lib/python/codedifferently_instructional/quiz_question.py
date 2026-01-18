@@ -20,6 +20,10 @@ class QuizQuestion:
     def set_answer(self, answer: str) -> None:
         self._correct_answer = answer
 
+"""
+TODO: Implement the rest of the functionality in python
+"""
+
 #   public promptForAnswer(scanner: Scanner, requireAnswer = false): void {
 #     let response: string | null = null;
 
