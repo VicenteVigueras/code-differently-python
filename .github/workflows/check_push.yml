@@ -77,7 +77,6 @@ jobs:
     #     npm run test
     
     - name: Build Shared Lib with Python
-      working-directory: ./lib/python/codedifferently_instructional
       run: |
         python -m pip install --upgrade pip
         pip install -e lib/python
