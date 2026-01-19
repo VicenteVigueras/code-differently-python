@@ -1,9 +1,80 @@
-class MultipleChoiceQuestion: 
-        def __init__(self, question_number, question, choices, answer):
-            self.question_number = question_number  
-            self.question = question  
-            self.choices = choices
-            self.answer = answer
+from .quiz_question import QuizQuestion
+from .answer_choice import AnswerChoice
 
-        def get_answer(self):
-            return self.answer
+class MultipleChoiceQuestion(QuizQuestion): 
+    _question_number: int
+    _question: str
+    _answer_choices: dict[str, str]
+    _answer: AnswerChoice
+
+    def __init__(self, question_number: int, question: str, answer_choices: dict[str, str], answer: AnswerChoice):
+        self._question_number = question_number  
+        self._question = question  
+        self._answer_choices = answer_choices
+        self._answer = answer
+
+    def get_answer(self) -> str:
+        return self._answer
+ 
+"""
+TODO: Implement the rest of the functionality in python
+"""   
+# import { Scanner } from './scanner.js';
+# import { AnswerChoice } from './answer_choice.js';
+
+# export class MultipleChoiceQuizQuestion extends QuizQuestion {
+#   private answersByOption: Map<AnswerChoice, string>;
+
+#   constructor(
+#     questionNumber: number,
+#     question: string,
+#     answerOptions: Map<AnswerChoice, string>,
+#     correctAnswer: AnswerChoice
+#   ) {
+#     super(questionNumber, question, correctAnswer);
+#     this.answersByOption = answerOptions;
+#   }
+
+#   public getAnswerChoices(): Set<AnswerChoice> {
+#     return new Set(this.answersByOption.keys());
+#   }
+
+#   public getAnswerForOption(option: AnswerChoice): string | undefined {
+#     return this.answersByOption.get(option);
+#   }
+
+#   public promptForAnswer(scanner: Scanner): void {
+#     let response: string | null = null;
+#     let answer: AnswerChoice | null = null;
+
+#     do {
+#       // If a response was given but not accepted, announce that.
+#       if (response !== null) {
+#         console.log("Value not accepted, try again.\n");
+#       }
+
+#       // Get a response.
+#       console.log(">> Your answer (or 's' to skip): ");
+#       response = scanner.next().toUpperCase().trim();
+
+#       // If the user wants to skip, let them.
+#       if (response === 'S') {
+#         this.setAnswer(null);
+#         return;
+#       }
+
+#       // Try to parse the answer.
+#       if (['A', 'B', 'C', 'D'].includes(response)) {
+#         answer = response as AnswerChoice;
+#       }
+#     } while (answer === null || !this.answersByOption.has(answer));
+
+#     // Set the question answer.
+#     this.setAnswer(answer);
+#   }
+
+#   public setAnswer(answer: AnswerChoice | null): void {
+#     super.setAnswer(answer ?? AnswerChoice.UNANSWERED);
+#   }
+# }
+

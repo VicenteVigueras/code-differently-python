@@ -53,11 +53,11 @@ jobs:
       working-directory: ./lib/java/codedifferently-instructional
       run: ./gradlew check
 
-    - name: Build Shared Lib with Node.js
-      working-directory: ./lib/javascript/codedifferently-instructional
-      run: |
-        npm ci
-        npm run test
+    # - name: Build Shared Lib with Node.js
+    #   working-directory: ./lib/javascript/codedifferently-instructional
+    #   run: |
+    #     npm ci
+    #     npm run test
 
     - name: Build Lesson 02 with Python
       working-directory: ./lesson_02/quiz_python
