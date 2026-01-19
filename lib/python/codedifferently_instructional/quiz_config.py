@@ -1,6 +1,7 @@
 from typing import Dict, NotRequired, Optional, TypedDict
 from .quiz_question import QuizQuestion
 from .answer_choice import AnswerChoice
+from .multiple_choice_question import MultipleChoiceQuestion
 import yaml
 
 class QuestionConfig(TypedDict):
@@ -47,42 +48,26 @@ class QuizConfig:
             self.__questions_by_provider = Dict()
             return
         self.__questions_by_provider = {
-        key: self.convert_to_quiz_questions(value) 
+        key: self.__convert_to_quiz_questions(value) 
         for key, value in questions_by_provider.items()
         }
 
-        
 
-#   public setQuestions(questionsByProvider: Record<string, QuestionConfig[]>) {
-#     if (!questionsByProvider) {
-#       this.questionsByProvider = new Map();
-#       return;
-#     }
-#     this.questionsByProvider = new Map(
-#       Object.entries(questionsByProvider).map(([key, value]) => [
-#         key,
-#         this.convertToQuizQuestions(value),
-#       ])
-#     );
-#   }
-
-
-#   private convertToQuizQuestions(configs: QuestionConfig[]): QuizQuestion[] {
-#     return configs.map((config, index) => {
-#       if (!config.choices) {
-#         return new QuizQuestion(index, config.prompt, '');
-#       } else {
-#         return new MultipleChoiceQuizQuestion(
-#           index,
-#           config.prompt,
-#           new Map(Object.entries(config.choices)) as Map<AnswerChoice, string>,
-#           AnswerChoice.UNANSWERED);
-        
-#       }
-#     });
-#   }
+    def __convert_to_quiz_questions(self, configs: list[QuestionConfig]) -> list[QuizQuestion]:
+        return [
+            MultipleChoiceQuestion(
+                index, 
+                config.prompt, 
+                dict(config.choices), 
+                AnswerChoice.UNANSWERED
+            ) 
+            if config.choices else 
+            QuizQuestion(index, config.prompt, '')
+            for index, config in enumerate(configs)
+        ]
  
-
+    def get_questions(self, provider: str) -> list[QuizQuestion]:
+        return self.__questions_by_provider.get(provider)
 
 
 #   public async checkAnswer(provider: string, questionNumber: number, actualAnswer: string): Promise<boolean> {
@@ -92,3 +77,9 @@ class QuizConfig:
 #     }
 #     return bcrypt.compare(actualAnswer, answers[questionNumber]);
 #   }
+
+    def size(self, provider: str) -> int:
+        answers = self.__answers_by_provider.get(provider)
+        return len(answers) if answers else 0
+    
+      
