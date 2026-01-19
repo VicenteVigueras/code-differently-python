@@ -1,5 +1,6 @@
 from codedifferently_instructional import AnswerChoice
 from codedifferently_instructional import MultipleChoiceQuestion
+from codedifferently_instructional import QuizPrinter
 
 class Lesson2:
     
@@ -8,7 +9,9 @@ class Lesson2:
         quiz_questions = Lesson2.make_quiz_questions()
         if not quiz_questions:
             print("No quiz questions found.")
-            return
+            return # Replace with Error handling in the future
+        printer = QuizPrinter()
+        printer.print_quiz(quiz_questions)
 
     @staticmethod
     def make_quiz_questions():
