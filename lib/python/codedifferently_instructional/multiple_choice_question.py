@@ -16,7 +16,9 @@ class MultipleChoiceQuestion(QuizQuestion):
     def get_answer(self) -> str:
         return self._answer
  
-
+"""
+TODO: Implement the rest of the functionality in python
+"""   
 # import { Scanner } from './scanner.js';
 # import { AnswerChoice } from './answer_choice.js';
 
