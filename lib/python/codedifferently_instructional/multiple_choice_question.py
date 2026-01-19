@@ -15,8 +15,6 @@ class MultipleChoiceQuestion(QuizQuestion):
     def get_answer_for_option(self, option: AnswerChoice) -> str:
         return self._answer_choices.get(option)
 
-
- 
 """
 TODO: Implement the rest of the functionality in python
 """   
