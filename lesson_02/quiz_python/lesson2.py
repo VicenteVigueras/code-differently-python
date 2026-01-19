@@ -6,16 +6,15 @@ from codedifferently_instructional import QuizQuestion
 class Lesson2:
     
     @staticmethod
-    def run():
+    def run() -> None:
         quiz_questions = Lesson2.make_quiz_questions()
         if not quiz_questions:
-            print("No quiz questions found.")
-            return # Replace with Error handling in the future
+            raise ValueError("Quiz questions cannot be null")
         printer = QuizPrinter()
         printer.print_quiz(quiz_questions)
 
     @staticmethod
-    def make_quiz_questions():
+    def make_quiz_questions() -> list[QuizQuestion]:
         return [
             Lesson2.__make_question_0(),
             Lesson2.__make_question_1(),
