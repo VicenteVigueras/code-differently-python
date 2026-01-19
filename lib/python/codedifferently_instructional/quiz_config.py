@@ -1,54 +1,50 @@
-# import * as bcrypt from 'bcrypt';
-# import { QuizQuestion } from './quiz_question.js';
-# import { AnswerChoice, MultipleChoiceQuizQuestion } from './multiple_choice_quiz_question.js';
-# import YAML from 'yaml';
-# import fs from 'fs';
+from typing import Dict, NotRequired, Optional, TypedDict
+from .quiz_question import QuizQuestion
+from .answer_choice import AnswerChoice
+import yaml
 
-# interface QuestionConfig {
-#   prompt: string;
-#   choices?: Map<AnswerChoice, string>;
-# }
 
-# export class QuizConfig {
-#   private answersByProvider: Map<string, string[]> = new Map();
-#   private questionsByProvider: Map<string, QuizQuestion[]> = new Map();
-#   private quizTaker: string = '';
+class QuizConfig:
+    __answers_by_provider: Dict[str,list[str]]
+    __questions_by_provider: Dict[str, list[QuizQuestion]]
+    __quiz_taker: str = ''
 
-#   constructor(path: string) {
-#     this.loadConfig(path);
-#   }
+    def __init__(self, path: str):
+        self.__load_config(path)
 
-#   private loadConfig(configPath: string) {
-#     const file = fs.readFileSync(configPath, 'utf8');
-#     const config = YAML.parse(file);
-    
-#     const answers = config.quiz.answers;
-#     const questions = config.quiz.questions;
+    def __load_config(self, config_path: str) -> None:
+        with open(config_path, "r") as file:
+            data = yaml.safe_load(file)
 
-#     if (answers) {
-#       this.setAnswers(new Map(Object.entries(answers)));
-#     }
+        answers = data['quiz'].get('answers')
+        questions = data['quiz'].get('questions')
 
-#     if (questions) {
-#       this.setQuestions(questions);
-#     }
-#   }
+        if answers:
+            self.set_answers(answers)
+        
+        if questions:
+            self.set_questions(questions)
 
-#   public setAnswers(answersByProvider: Map<string, string[]>) {
-#     answersByProvider.forEach((answers, provider) => {
-#       // Replace bcrypt's $2y$ with $2b$ to make it compatible with bcryptjs.
-#       answersByProvider.set(provider, answers.map((answer) => answer.replace('$2y$', '$2b$')));
-#     });
-#     this.answersByProvider = answersByProvider;
-#   }
+    def set_answers(self, answers_by_provider: Dict[str, list[str]]) -> None:
+        for provider, answers in answers_by_provider.items():
+            answers_by_provider[provider] = [
+                answer.replace("$2y$", "$2b$")
+            for answer in answers
+        ]
+        self.answers_by_provider = answers_by_provider
 
-#   public setQuizTaker(quizTaker: string) {
-#     this.quizTaker = quizTaker;
-#   }
+    def set_quiz_taker(self, quiz_taker: str) -> None:
+        self.__quiz_taker = quiz_taker
 
-#   public getQuizTaker(): string {
-#     return this.quizTaker;
-#   }
+    def get_quiz_taker(self) -> str:
+        return self.__quiz_taker
+
+    def set_questions(self, questions_by_provider: Dict[str, list[QuizConfig]]):
+        if not questions_by_provider:
+            self.__questions_by_provider = Dict()
+            return
+        self.__questions_by_provider = Dict()
+        
 
 #   public setQuestions(questionsByProvider: Record<string, QuestionConfig[]>) {
 #     if (!questionsByProvider) {
@@ -77,6 +73,7 @@
 #       }
 #     });
 #   }
+
 
 #   public getQuestions(provider: string): QuizQuestion[] | undefined {
 #     return this.questionsByProvider.get(provider);
