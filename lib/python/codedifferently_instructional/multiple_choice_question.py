@@ -1,5 +1,5 @@
-from quiz_question import QuizQuestion
-from answer_choice import AnswerChoice
+from .quiz_question import QuizQuestion
+from .answer_choice import AnswerChoice
 
 class MultipleChoiceQuestion(QuizQuestion): 
     _question_number: int

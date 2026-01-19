@@ -1,7 +1,9 @@
+from typing import Optional
+
 class QuizQuestion:
     _question_number: int
     _question: str
-    _correct_answer: str | None
+    _correct_answer: Optional[str] = None
     
     def __init__(self, question_number, question, correct_answer):
         self._question_number = question_number
