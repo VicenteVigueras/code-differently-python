@@ -22,7 +22,7 @@ class QuizQuestion:
 
 """
 TODO: Implement the rest of the functionality in python
-"""
+"""             
 
 #   public promptForAnswer(scanner: Scanner, requireAnswer = false): void {
 #     let response: string | null = null;
@@ -48,11 +48,4 @@ TODO: Implement the rest of the functionality in python
 #     // Set the question answer.
 #     this.setAnswer(response);
 #   }
-# }
 
-# // Scanner class to simulate Java's Scanner for user input
-# class Scanner {
-#   public next(): string {
-#     return require('readline-sync').question('');
-#   }
-# }
