@@ -16,9 +16,13 @@ class QuizQuestion:
     def get_question_prompt(self) -> str:
         return self._question
 
-    def get_answer(self) -> str:
-        return self._correct_answer or ""
-
+    # not convinced with this impl - will most likely change
+    # works though
+    def get_answer(self) -> str: 
+        if hasattr(self._correct_answer, 'name'):
+            return self._correct_answer.name
+        return str(self._correct_answer or "") 
+    
     def set_answer(self, answer: str) -> None:
         self._correct_answer = answer
 
