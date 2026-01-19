@@ -4,6 +4,10 @@ from .answer_choice import AnswerChoice
 import yaml
 
 
+class QuestionConfig(TypedDict):
+    prompt: str
+    choices: NotRequired[Dict['AnswerChoice', str]]
+
 class QuizConfig:
     __answers_by_provider: Dict[str,list[str]]
     __questions_by_provider: Dict[str, list[QuizQuestion]]
@@ -73,7 +77,7 @@ class QuizConfig:
 #       }
 #     });
 #   }
-
+ 
 
 #   public getQuestions(provider: string): QuizQuestion[] | undefined {
 #     return this.questionsByProvider.get(provider);
