@@ -9,27 +9,26 @@ class QuizPrinter:
             self.print_question(question)
 
     def print_question(self, question: QuizQuestion, print_answer: bool = True) -> None:
+        print("=" * 80)
         print(f'Question {question.get_question_number()}: {question.get_question_prompt()}')
         if (isinstance(question, MultipleChoiceQuestion)):
-            print("placeholder")
+            self._print_possible_answers(question)
+        
         if not print_answer:
             return
+        
+        print(f">> Your answer: {question.get_answer()} \n")
+        
 
+    def _print_possible_answers(self, question: MultipleChoiceQuestion) -> None:
+        for option in AnswerChoice:
+            if option == AnswerChoice.UNANSWERED:
+                continue
+            answer = question.get_answer_for_option(option)
+            if answer is None:
+                continue
+            print(f"{option}: {answer}")
 
-#   printQuizQuestion(question: QuizQuestion, printAnswer: boolean = true): void {
-#     console.log(`Question ${question.getQuestionNumber()}: ${question.getQuestionPrompt()}`);
-
-#     if (question instanceof MultipleChoiceQuizQuestion) {
-#       this.printPossibleAnswers(question);
-#     }
-
-#     if (!printAnswer) {
-#       return;
-#     }
-
-#     console.log(`>> Your answer: ${question.getAnswer()}`);
-#     console.log();
-#   }
 
 #   private printPossibleAnswers(question: MultipleChoiceQuizQuestion): void {
 #     for (const option of Object.values(AnswerChoice)) {
