@@ -16,4 +16,4 @@ def test_review_quiz():
     print(questions)
 
     for i in range (0,len(questions)):
-        assert questions[i].get_answer().value == answers[i]
+        assert questions[i].get_answer() == answers[i]
