@@ -3,7 +3,6 @@ from .quiz_question import QuizQuestion
 from .answer_choice import AnswerChoice
 import yaml
 
-
 class QuestionConfig(TypedDict):
     prompt: str
     choices: NotRequired[Dict['AnswerChoice', str]]
@@ -43,11 +42,15 @@ class QuizConfig:
     def get_quiz_taker(self) -> str:
         return self.__quiz_taker
 
-    def set_questions(self, questions_by_provider: Dict[str, list[QuizConfig]]):
+    def set_questions(self, questions_by_provider: Dict[str, list[QuestionConfig]]) -> None:
         if not questions_by_provider:
             self.__questions_by_provider = Dict()
             return
-        self.__questions_by_provider = Dict()
+        self.__questions_by_provider = {
+        key: self.convert_to_quiz_questions(value) 
+        for key, value in questions_by_provider.items()
+        }
+
         
 
 #   public setQuestions(questionsByProvider: Record<string, QuestionConfig[]>) {
@@ -62,6 +65,7 @@ class QuizConfig:
 #       ])
 #     );
 #   }
+
 
 #   private convertToQuizQuestions(configs: QuestionConfig[]): QuizQuestion[] {
 #     return configs.map((config, index) => {
@@ -79,9 +83,7 @@ class QuizConfig:
 #   }
  
 
-#   public getQuestions(provider: string): QuizQuestion[] | undefined {
-#     return this.questionsByProvider.get(provider);
-#   }
+
 
 #   public async checkAnswer(provider: string, questionNumber: number, actualAnswer: string): Promise<boolean> {
 #     const answers = this.answersByProvider.get(provider);
@@ -90,9 +92,3 @@ class QuizConfig:
 #     }
 #     return bcrypt.compare(actualAnswer, answers[questionNumber]);
 #   }
-
-#   public size(provider: string): number {
-#     const answers = this.answersByProvider.get(provider);
-#     return answers ? answers.length : 0;
-#   }
-# }
