@@ -1,8 +1,8 @@
 from collections.abc import Iterable
-from quiz_question import QuizQuestion
+from .quiz_question import QuizQuestion
 
 class QuizPrinter:
-    def print_quiz(quiz_questions: Iterable[QuizQuestion]):
+    def print_quiz(self, quiz_questions: Iterable[QuizQuestion]) -> None:
         for question in quiz_questions:
             print(question)
 
