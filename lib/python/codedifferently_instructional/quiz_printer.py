@@ -5,11 +5,12 @@ from .multiple_choice_question import MultipleChoiceQuestion
 
 class QuizPrinter:
     def print_quiz(self, quiz_questions: Iterable[QuizQuestion]) -> None:
+        print("=" * 80 + "\n")
         for question in quiz_questions:
             self.print_question(question)
+        print("=" * 80)
 
     def print_question(self, question: QuizQuestion, print_answer: bool = True) -> None:
-        print("=" * 80)
         print(f'Question {question.get_question_number()}: {question.get_question_prompt()}')
         if (isinstance(question, MultipleChoiceQuestion)):
             self._print_possible_answers(question)
@@ -27,7 +28,7 @@ class QuizPrinter:
             answer = question.get_answer_for_option(option)
             if answer is None:
                 continue
-            print(f"{option}: {answer}")
+            print(f"{option.value}: {answer}")
 
 
 #   private printPossibleAnswers(question: MultipleChoiceQuizQuestion): void {
