@@ -1,6 +1,6 @@
 from .quiz_question import QuizQuestion
 from .answer_choice import AnswerChoice
-from typing import Dict, Optional
+from typing import Dict
 
 class MultipleChoiceQuestion(QuizQuestion): 
     _question_number: int
@@ -9,28 +9,18 @@ class MultipleChoiceQuestion(QuizQuestion):
     _answer: AnswerChoice
 
     def __init__(self, question_number: int, question: str, answer_choices: Dict[str, str], answer: AnswerChoice):
-        self._question_number = question_number  
-        self._question = question  
+        super().__init__(question_number, question, answer)
         self._answer_choices = answer_choices
-        self._answer = answer
-
-    def get_answer(self) -> str:
-        return self._answer
     
     def get_answer_for_option(self, option: AnswerChoice) -> str:
         return self._answer_choices.get(option)
 
-    
-    
-    #   public getAnswerForOption(option: AnswerChoice): string | undefined {
-#     return this.answersByOption.get(option);
-#   }
+
  
 """
 TODO: Implement the rest of the functionality in python
 """   
 # import { Scanner } from './scanner.js';
-# import { AnswerChoice } from './answer_choice.js';
 
 # export class MultipleChoiceQuizQuestion extends QuizQuestion {
 #   private answersByOption: Map<AnswerChoice, string>;
