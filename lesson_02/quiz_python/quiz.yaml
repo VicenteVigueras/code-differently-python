@@ -13,6 +13,9 @@ quiz:
       - A #9
       - B #10
 
+### 
+### TODO: Change to bycrypt strings once decoding is implemented
+###
 
 # quiz:
 #   answers:

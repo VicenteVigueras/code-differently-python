@@ -1,5 +1,6 @@
-# Create a sample question
-#
+"""
+TODO: Implement quiz question test in python
+"""
 
 # import { QuizQuestion } from './quiz_question.js';
 # import { Scanner } from './scanner.js';

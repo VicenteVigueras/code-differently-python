@@ -20,7 +20,6 @@ class QuizPrinter:
         
         print(f">> Your answer: {question.get_answer()} \n")
         
-
     def __print_possible_answers(self, question: MultipleChoiceQuestion) -> None:
         for option in AnswerChoice:
             if option == AnswerChoice.UNANSWERED:

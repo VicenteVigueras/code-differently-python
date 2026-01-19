@@ -52,7 +52,6 @@ class QuizConfig:
         for key, value in questions_by_provider.items()
         }
 
-
     def __convert_to_quiz_questions(self, configs: list[QuestionConfig]) -> list[QuizQuestion]:
         return [
             MultipleChoiceQuestion(
@@ -69,7 +68,13 @@ class QuizConfig:
     def get_questions(self, provider: str) -> list[QuizQuestion]:
         return self.__questions_by_provider.get(provider)
 
+    def size(self, provider: str) -> int:
+        answers = self.__answers_by_provider.get(provider)
+        return len(answers) if answers else 0
 
+"""
+TODO: Implement bycrypt
+"""
 #   public async checkAnswer(provider: string, questionNumber: number, actualAnswer: string): Promise<boolean> {
 #     const answers = this.answersByProvider.get(provider);
 #     if (!answers) {
@@ -78,8 +83,6 @@ class QuizConfig:
 #     return bcrypt.compare(actualAnswer, answers[questionNumber]);
 #   }
 
-    def size(self, provider: str) -> int:
-        answers = self.__answers_by_provider.get(provider)
-        return len(answers) if answers else 0
+
     
       
