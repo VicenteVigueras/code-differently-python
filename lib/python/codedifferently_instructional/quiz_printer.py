@@ -1,22 +1,20 @@
 from collections.abc import Iterable
 from .quiz_question import QuizQuestion
+from .answer_choice import AnswerChoice
+from .multiple_choice_question import MultipleChoiceQuestion
 
 class QuizPrinter:
     def print_quiz(self, quiz_questions: Iterable[QuizQuestion]) -> None:
         for question in quiz_questions:
-            print(question)
+            self.print_question(question)
 
-# import { QuizQuestion } from './quiz_question.js';
-# import { AnswerChoice, MultipleChoiceQuizQuestion } from './multiple_choice_quiz_question.js';
+    def print_question(self, question: QuizQuestion, print_answer: bool = True) -> None:
+        print(f'Question {question.get_question_number()}: {question.get_question_prompt()}')
+        if (isinstance(question, MultipleChoiceQuestion)):
+            print("placeholder")
+        if not print_answer:
+            return
 
-# export class QuizPrinter {
-#   printQuiz(quizQuestions: Iterable<QuizQuestion>): void {
-#     console.log();
-
-#     for (const question of quizQuestions) {
-#       this.printQuizQuestion(question);
-#     }
-#   }
 
 #   printQuizQuestion(question: QuizQuestion, printAnswer: boolean = true): void {
 #     console.log(`Question ${question.getQuestionNumber()}: ${question.getQuestionPrompt()}`);
