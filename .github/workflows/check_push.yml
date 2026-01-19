@@ -58,6 +58,11 @@ jobs:
     #   run: |
     #     npm ci
     #     npm run test
+    - name: Build Shared Lib with Python
+      working-directory: ./lib/python/codedifferently_instructional
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e lib/python
 
     - name: Build Lesson 02 with Python
       working-directory: ./lesson_02/quiz_python
