@@ -13,7 +13,7 @@ class QuizPrinter:
     def print_question(self, question: QuizQuestion, print_answer: bool = True) -> None:
         print(f'Question {question.get_question_number()}: {question.get_question_prompt()}')
         if (isinstance(question, MultipleChoiceQuestion)):
-            self._print_possible_answers(question)
+            self.__print_possible_answers(question)
         
         if not print_answer:
             return
@@ -21,7 +21,7 @@ class QuizPrinter:
         print(f">> Your answer: {question.get_answer()} \n")
         
 
-    def _print_possible_answers(self, question: MultipleChoiceQuestion) -> None:
+    def __print_possible_answers(self, question: MultipleChoiceQuestion) -> None:
         for option in AnswerChoice:
             if option == AnswerChoice.UNANSWERED:
                 continue
@@ -29,18 +29,3 @@ class QuizPrinter:
             if answer is None:
                 continue
             print(f"{option.value}: {answer}")
-
-
-#   private printPossibleAnswers(question: MultipleChoiceQuizQuestion): void {
-#     for (const option of Object.values(AnswerChoice)) {
-#       if (option === AnswerChoice.UNANSWERED) {
-#         continue;
-#       }
-#       const answer = question.getAnswerForOption(option);
-#       if (answer === null || answer === undefined) {
-#         continue;
-#       }
-#       console.log(`${option}: ${answer}`);
-#     }
-#   }
-# }

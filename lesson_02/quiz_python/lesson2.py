@@ -29,7 +29,7 @@ class Lesson2:
             Lesson2.__make_question_9(),
             Lesson2.__make_question_10()
         ]
-    
+
     @staticmethod
     def __make_question_0() -> QuizQuestion:
         return MultipleChoiceQuestion(
@@ -100,7 +100,6 @@ class Lesson2:
             AnswerChoice.D
         )
          
-    
     @staticmethod
     def __make_question_5() -> QuizQuestion:
         return MultipleChoiceQuestion(
