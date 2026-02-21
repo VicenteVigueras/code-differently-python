@@ -1,12 +1,12 @@
-from typing import Dict, NotRequired, Optional, TypedDict
+from typing import Dict, Optional, TypedDict
 from .quiz_question import QuizQuestion
 from .answer_choice import AnswerChoice
-from .multiple_choice_question import MultipleChoiceQuestion
-import yaml
+from .multiple_choice_quiz_question import MultipleChoiceQuizQuestion
+# import yaml
 
 class QuestionConfig(TypedDict):
     prompt: str
-    choices: NotRequired[Dict['AnswerChoice', str]]
+    # choices: NotRequired[Dict['AnswerChoice', str]]
 
 class QuizConfig:
     __answers_by_provider: Dict[str,list[str]]
@@ -16,18 +16,18 @@ class QuizConfig:
     def __init__(self, path: str):
         self.__load_config(path)
 
-    def __load_config(self, config_path: str) -> None:
-        with open(config_path, "r") as file:
-            data = yaml.safe_load(file)
+    # def __load_config(self, config_path: str) -> None:
+    #     with open(config_path, "r") as file:
+    #         data = yaml.safe_load(file)
 
-        answers = data['quiz'].get('answers')
-        questions = data['quiz'].get('questions')
+    #     answers = data['quiz'].get('answers')
+    #     questions = data['quiz'].get('questions')
 
-        if answers:
-            self.set_answers(answers)
+    #     if answers:
+    #         self.set_answers(answers)
         
-        if questions:
-            self.set_questions(questions)
+    #     if questions:
+    #         self.set_questions(questions)
 
     def set_answers(self, answers_by_provider: Dict[str, list[str]]) -> None:
         for provider, answers in answers_by_provider.items():
@@ -54,7 +54,7 @@ class QuizConfig:
 
     def __convert_to_quiz_questions(self, configs: list[QuestionConfig]) -> list[QuizQuestion]:
         return [
-            MultipleChoiceQuestion(
+            MultipleChoiceQuizQuestion(
                 index, 
                 config.prompt, 
                 dict(config.choices), 

@@ -1,11 +1,10 @@
 from codedifferently_instructional import AnswerChoice
-from codedifferently_instructional import MultipleChoiceQuestion
+from codedifferently_instructional import MultipleChoiceQuizQuestion
 from codedifferently_instructional import QuizPrinter
 from codedifferently_instructional import QuizQuestion
 
 class Lesson2:
     
-    @staticmethod
     def run() -> None:
         quiz_questions = Lesson2.make_quiz_questions()
         if not quiz_questions:
@@ -16,22 +15,22 @@ class Lesson2:
     @staticmethod
     def make_quiz_questions() -> list[QuizQuestion]:
         return [
-            Lesson2.__make_question_0(),
-            Lesson2.__make_question_1(),
-            Lesson2.__make_question_2(),
-            Lesson2.__make_question_3(),
-            Lesson2.__make_question_4(),
-            Lesson2.__make_question_5(),
-            Lesson2.__make_question_6(),
-            Lesson2.__make_question_7(),
-            Lesson2.__make_question_8(),
-            Lesson2.__make_question_9(),
-            Lesson2.__make_question_10()
+            Lesson2._make_question_0(),
+            Lesson2._make_question_1(),
+            Lesson2._make_question_2(),
+            Lesson2._make_question_3(),
+            Lesson2._make_question_4(),
+            Lesson2._make_question_5(),
+            Lesson2._make_question_6(),
+            Lesson2._make_question_7(),
+            Lesson2._make_question_8(),
+            Lesson2._make_question_9(),
+            Lesson2._make_question_10()
         ]
 
     @staticmethod
-    def __make_question_0() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_0() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             0, 
             "What is the main purpose of version control?", 
                 {
@@ -44,8 +43,8 @@ class Lesson2:
         )
          
     @staticmethod
-    def __make_question_1() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_1() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             1, 
             "What is a fork in Git?", 
                 {
@@ -58,8 +57,8 @@ class Lesson2:
         )
     
     @staticmethod
-    def __make_question_2() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_2() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             2, 
             "Which of the following is NOT part of the basic Git workflow?", 
                 {
@@ -72,8 +71,8 @@ class Lesson2:
         )
     
     @staticmethod
-    def __make_question_3() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_3() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             3, 
             "What command is used to combine changes from different branches?", 
                 {
@@ -86,8 +85,8 @@ class Lesson2:
         )
     
     @staticmethod
-    def __make_question_4() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_4() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             4, 
             "Which IDE is being used in the class?", 
                 {
@@ -100,8 +99,8 @@ class Lesson2:
         )
          
     @staticmethod
-    def __make_question_5() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_5() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             5, 
             "What feature allows developers to work from the same pre-configured environment in VS Code?", 
                 {
@@ -114,8 +113,8 @@ class Lesson2:
         )
 
     @staticmethod
-    def __make_question_6() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_6() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             6, 
             "What is NOT a reason for using an IDE?", 
                 {
@@ -128,8 +127,8 @@ class Lesson2:
         )
 
     @staticmethod
-    def __make_question_7() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_7() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             7, 
             "What is the command to list files in the current directory?", 
                 {
@@ -142,8 +141,8 @@ class Lesson2:
         )
 
     @staticmethod
-    def __make_question_8() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_8() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             8, 
             "Which command is used to change directories in the terminal?", 
                 {
@@ -156,8 +155,8 @@ class Lesson2:
             )
 
     @staticmethod
-    def __make_question_9() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_9() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             9, 
             "What does the command `chmod` do?", 
                 {
@@ -170,8 +169,8 @@ class Lesson2:
         )
       
     @staticmethod
-    def __make_question_10() -> QuizQuestion:
-        return MultipleChoiceQuestion(
+    def _make_question_10() -> QuizQuestion:
+        return MultipleChoiceQuizQuestion(
             10, 
             "What is the shortcut for getting to the Mac terminal?", 
                 {

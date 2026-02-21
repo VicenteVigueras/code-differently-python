@@ -1,0 +1,30 @@
+from .quiz_question import QuizQuestion
+from .answer_choice import AnswerChoice
+from typing import Dict, Optional
+
+class MultipleChoiceQuizQuestion(QuizQuestion): 
+    _answers_by_option: Dict[AnswerChoice, str]
+
+    def __init__(self, 
+                 question_number: int, 
+                 question: str, 
+                 answer_options: Dict[AnswerChoice, str], 
+                 correct_answer: AnswerChoice
+                 ):
+        super().__init__(question_number, question, correct_answer)
+        self._answers_by_option = answer_options
+    
+
+    def get_answer_choices(self) -> set[AnswerChoice]: 
+        return set(self._answers_by_option.keys())
+    
+    def get_answer_for_option(self, option: AnswerChoice) -> Optional[str]:
+        return self._answers_by_option.get(option)
+    
+    def prompt_for_answer(self) -> None: 
+        response: Optional[str] = None
+        answer: Optional[AnswerChoice] = None
+        while(response is None or answer not in self._answers_by_option):
+            input("what's ur answwer")
+
+
