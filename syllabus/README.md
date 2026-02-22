@@ -1,28 +1,9 @@
-# Code Differently Cohort 2025 Q1
+## Code Differently Software Bootcamp - 2025 
 
-## Instructor
-
-### Anthony D. Mays (@anthonydmays)
-
-Anthony is a software engineer with over 23 years of experience across finance, e-commerce, enterprise consulting, and data visualization & analysis. Before becoming a full-time entrepreneur via his firm Morgan Latimer Consulting, he spent 8 years at Google where he became a Senior Software Engineer.
-
-[![Website][website-badge]][instructor-website]
-[![Github][github-badge]][instructor-github]
-[![LinkedIn][linkedin-badge]][instructor-li]
-[![Twitter][twitter-badge]][instructor-twitter] 
-[![YouTube][youtube-badge]][instructor-youtube]
-
-[website-badge]: https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white
-[github-badge]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
-[linkedin-badge]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[twitter-badge]: https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white
-[youtube-badge]: https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white
-
-[instructor-website]: https://anthonydmays.com
-[instructor-github]: https://github.com/anthonydmays
-[instructor-li]:  https://linkedin.com/in/anthonydmays
-[instructor-twitter]:  https://twitter.com/anthonydmays
-[instructor-youtube]:  https://youtube.com/@anthonydmays
+### Original Author, and Instructor of this Course:
+- Anthony is a software engineer with over 23 years of experience across finance, e-commerce, enterprise consulting, and data visualization & analysis. Before becoming a full-time entrepreneur via his firm Morgan Latimer Consulting, he spent 8 years at Google where he became a Senior Software Engineer.
+    - [instructor-website]
+    - [instructor-youtube]
 
 ## Course Description
 
