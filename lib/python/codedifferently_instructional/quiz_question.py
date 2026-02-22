@@ -23,7 +23,7 @@ class QuizQuestion:
             return self._correct_answer.name
         return str(self._correct_answer or "") 
     
-    def set_answer(self, answer: str) -> None:
+    def set_answer(self, answer: Optional[str]) -> None:
         self._correct_answer = answer
 
 """
