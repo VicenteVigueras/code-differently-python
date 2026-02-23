@@ -5,7 +5,7 @@ class QuizQuestion:
     _question: str
     _correct_answer: Optional[str] = None
     
-    def __init__(self, question_number, question, correct_answer):
+    def __init__(self, question_number: int, question: str, correct_answer: str):
         self._question_number = question_number
         self._question = question
         self._correct_answer = correct_answer
@@ -16,42 +16,20 @@ class QuizQuestion:
     def get_question_prompt(self) -> str:
         return self._question
 
-    # not convinced with this impl - will most likely change
-    # works though
     def get_answer(self) -> str: 
-        if hasattr(self._correct_answer, 'name'):
-            return self._correct_answer.name
-        return str(self._correct_answer or "") 
+        return self._correct_answer if self._correct_answer is not None else ''
     
     def set_answer(self, answer: Optional[str]) -> None:
         self._correct_answer = answer
 
-"""
-TODO: Implement the rest of the functionality in python
-"""             
+    def prompt_for_answer(self, require_answer = False) -> None: 
+        response: Optional[str] = None
 
-#   public promptForAnswer(scanner: Scanner, requireAnswer = false): void {
-#     let response: string | null = null;
+        if response is not None:
+            print("Value not accepted, try again.\n")
 
-#     do {
-#       // If a response was given but not accepted, announce that.
-#       if (response !== null) {
-#         console.log("Value not accepted, try again.\n");
-#       }
+        if response.upper() == 'S':
+            self.set_answer(None) 
+            return
 
-#       // Get a response.
-#       const prompt = `>> Your answer ${requireAnswer ? "(required)" : "(or 's' to skip)"}: `;
-#       process.stdout.write(prompt);
-#       response = scanner.next().trim();
-
-#       // If the user wants to skip, let them.
-#       if (!requireAnswer && response.toUpperCase() === "S") {
-#         this.setAnswer(null);
-#         return;
-#       }
-#     } while (requireAnswer && (response === '' || response.toUpperCase() === 'S'));
-
-#     // Set the question answer.
-#     this.setAnswer(response);
-#   }
-
+    
