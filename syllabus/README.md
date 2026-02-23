@@ -1,9 +1,12 @@
 ## Code Differently Software Bootcamp - 2025 
 
-### Original Author, and Instructor of this Course:
+### Original Author, and Instructor of this Course!
 - Anthony is a software engineer with over 23 years of experience across finance, e-commerce, enterprise consulting, and data visualization & analysis. Before becoming a full-time entrepreneur via his firm Morgan Latimer Consulting, he spent 8 years at Google where he became a Senior Software Engineer.
     - [instructor-website]
     - [instructor-youtube]
+
+[instructor-youtube]:  https://youtube.com/@anthonydmays
+[instructor-website]: https://anthonydmays.com
 
 ## Course Description
 
@@ -31,11 +34,6 @@ The course will feature required reading from the following selection of books. 
 | PIE          | Programming Interviews Exposed (4th Edition, Wrox)                                 |
 | LWD          | Learning Web Design: A Beginner's Guide to HTML, CSS, JavaScript, and Web Graphics |
 
-## Slides
-
-You can find the full lecture presentation slides at [ml.tips/25q1-slides][slides-link].
-
-[slides-link]: https://ml.tips/25q1-slides
 
 ## Tools
 
