@@ -1,17 +1,15 @@
-# Lesson 03: How Computers Work ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_03))
+# Lesson 03: How Computers Work
 
-## Pre-work
-
+## Required
 Please review the following resources before lecture:
 
 * [Exploring How Computers Work (Video)](https://www.youtube.com/watch?v=QZwneRb-zqA&list=RDCMUCmtyQOKKmrMVaKuRXz02jbQ&index=1)
 * [What does what in your computer? Computer parts Explained (Video)](https://www.youtube.com/watch?v=ExxFxD4OSZ0)
 
-## Homework
-
-- [ ] Review [important reminders below](#important-reminders).
-- [ ] Create [new quiz questions](#creating-new-quiz-questions).
-- [ ] Do pre-work for [lesson 04](/lesson_04/).
+## Activity
+- Review [important reminders below](#important-reminders).
+- Create [new quiz questions](#creating-new-quiz-questions).
+- Do pre-work for [lesson 04](/lesson_04/).
 
 ### Important reminders
 

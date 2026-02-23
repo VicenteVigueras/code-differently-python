@@ -1,22 +1,9 @@
-# Lesson 02: Developer Workflow: Navigating the Terminal ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_02))
+# Lesson 02: Developer Workflow: Navigating the Terminal
 
-## Pre-work
+## Required
+- [Absolute BEGINNER Guide to the Mac OS Terminal (Video)](https://www.youtube.com/watch?v=aKRYQsKR46I)
 
-Please review the following resources before lecture:
-
-* [Absolute BEGINNER Guide to the Mac OS Terminal (Video)](https://www.youtube.com/watch?v=aKRYQsKR46I)
-
-## Homework
-
-- [ ] Complete [Lesson 02 quiz](#lesson-02-quiz-instructions)
-- [ ] Do pre-work for [lesson 03](/lesson_03/).
-
-### Prerequisites
-
-To complete this assignment, you must have **Docker** and **VS Code** with the [**Dev Containers**][dev-containers-link] extension installed.
-
-### Lesson 02 Quiz Instructions
-
+## Lesson 02 Quiz Instructions
 For this assignment, you will complete a quiz by modifying a TypeScript application. Within the quiz project, there are tests that you will need to make pass in order to submit your answers. Here are the instructions for completing the assignment:
 
 1. Make sure to sync your fork to pull in the latest changes.

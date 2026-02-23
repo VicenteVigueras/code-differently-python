@@ -1,22 +1,19 @@
-# Lesson 00 - Developer Workflow: Git Fundamentals ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_00))
+# Lesson 00 - Developer Workflow: Git Fundamentals
 
-### Required
+## Required
 * [Git + GitHub Branches, Forks, and Pull Requests (Video)](https://youtu.be/oa1wXWeH1IQ?si=fnN6f4Ua1dbdWmqN)
 * [A Simplified Convention for Naming Branches and Commits in Git](https://dev.to/varbsan/a-simplified-convention-for-naming-branches-and-commits-in-git-il4)
 * [The Git Fork-Branch-Pull Workflow](https://www.tomasbeuzen.com/post/git-fork-branch-pull/)
 
----
-### Activity
-- Create a [personal README](#personal-readme) and [submit](#submitting-your-assignment) via GitHub.
+## Activity
+Create a [personal README](#personal-readme) and [submit](#submitting-your-assignment) via GitHub.
 
 ### Personal README:
-
 - A personal README is a way to teach others how to best work with you. It is useful for expressing your learning style and personal preferences, likes and dislikes.
 - For this exercise, you with use the `MARKDOWN` language (the language used to author this very README) to create your own personal version. Your version should incorporate __at least one picture, one list, appropriate headings, and be at least 300 words__.
 - For inspiration, feel free to check out the examples at [Kaeti's repo][kaeti-repo] or do your own thing. Have fun, but keep it professional!
 
 ### Submitting your assignment
-
 To submit your assignment, please do the following:
 
 1. Fork this repository (repo) under your own Github account.
